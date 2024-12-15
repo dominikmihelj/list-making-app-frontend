@@ -1,0 +1,25 @@
+<div class="home-container">
+  <div class="new-board-section">
+    <div class="new-board">
+      <input
+        type="text"
+        [(ngModel)]="newBoardName"
+        placeholder="Enter new board name"
+      />
+      <button class="add-board-btn" (click)="addBoard()">Add New Board</button>
+    </div>
+  </div>
+
+  <div class="board-container">
+    <div class="board" *ngFor="let board of boards">
+      <div class="board-content">
+        <a [routerLink]="['/boards', board.id]">
+          <h3>{{ board.name }}</h3>
+        </a>
+        <button (click)="deleteBoard(board.id)" class="delete-btn">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="board-page">
+  <div class="board-header">
+    <h2>{{ board.name }}</h2>
+    <div class="new-list">
+      <input
+        type="text"
+        [(ngModel)]="newListName"
+        placeholder="Enter new list name"
+      />
+      <button (click)="addList()">Add List</button>
+    </div>
+  </div>
+
+  <div class="board-container">
+    <div *ngFor="let list of board.lists" class="list-column">
+      <div class="list-header">
+        <h3>{{ list.name }}</h3>
+        <button (click)="deleteList(list.id)" class="delete-btn">
+          Delete List
+        </button>
+      </div>
+
+      <div class="list-cards">
+        <div *ngFor="let card of list.cards" class="card">
+          <h4>{{ card.name }}</h4>
+
+          <div *ngIf="!editingStates[card.id].editing; else editMode">
+            <p>{{ editingStates[card.id].description || "No description" }}</p>
+            <button (click)="toggleEdit(card.id)">Edit</button>
+          </div>
+
+          <ng-template #editMode>
+            <textarea
+              [(ngModel)]="editingStates[card.id].description"
+              rows="3"
+            ></textarea>
+            <button (click)="saveDescription(list.id, card.id)">Save</button>
+            <button (click)="toggleEdit(card.id)">Cancel</button>
+          </ng-template>
+
+          <button (click)="deleteCard(list.id, card.id)" class="delete-btn">
+            Delete Card
+          </button>
+        </div>
+      </div>
+
+      <div class="new-card">
+        <input
+          type="text"
+          [(ngModel)]="newCardNames[list.id]"
+          placeholder="Enter card name"
+        />
+        <button (click)="addCard(list.id)">Add Card</button>
+      </div>
+    </div>
+  </div>
+</div>

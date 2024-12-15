@@ -1,0 +1,237 @@
+/* Container for the board page */
+.board-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Header for the board */
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Input and button for new list */
+.new-list {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.new-list input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  flex-grow: 1;
+}
+
+.new-list button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px; /* Increased padding */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.new-list button:hover {
+  background-color: #0056b3;
+}
+
+/* Row containing the lists */
+.board-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.board-header h2 {
+  font-size: 32px; /* Larger font size for more visibility */
+  font-weight: 700; /* Bold font weight to make it stand out */
+  margin: 0;
+  color: #333; /* Darker color for better contrast */
+  letter-spacing: 1px; /* Add some letter spacing for a more polished look */
+  text-transform: uppercase; /* Capitalize the text for a stronger presence */
+}
+
+/* Optionally, add a hover effect to enhance interactivity */
+.board-header h2:hover {
+  color: #007bff; /* Change the color when hovered for better visibility */
+  text-decoration: underline; /* Underline on hover to indicate interactivity */
+}
+
+/* Styling for each list column */
+.list-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f4f4f4;
+  width: 320px; /* Keep the width the same */
+  min-height: 600px; /* Increased height for longer columns */
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Ensures content scrolls vertically if needed */
+}
+
+/* Header for each list */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.list-header h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Delete list button - more visible */
+.list-header .delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 15px; /* Increased padding */
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.list-header .delete-btn:hover {
+  background-color: #b71c1c;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.list-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: 850px;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+}
+
+.card h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.card p {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.card button {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 15px; /* Increased padding */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  margin-bottom: 10px; /* Added bottom margin */
+}
+
+.card button:hover {
+  background-color: #388e3c;
+}
+
+/* Add card form */
+.new-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.new-card input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.new-card button {
+  background-color: #007bff; /* Same blue as Add List */
+  color: white;
+  padding: 12px 25px; /* Increased padding */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.new-card button:hover {
+  background-color: #0056b3;
+}
+
+/* Edit button */
+.card .edit-btn {
+  background-color: #28a745; /* Green color */
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.card .edit-btn:hover {
+  background-color: #218838;
+}
+
+/* Cancel button */
+.card .cancel-btn {
+  background-color: white;
+  color: #dc3545; /* Red text */
+  border: 1px solid #dc3545; /* Red border */
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card .cancel-btn:hover {
+  background-color: #f8d7da;
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+/* Delete button */
+.card .delete-btn {
+  background-color: #dc3545;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card .delete-btn:hover {
+  background-color: #b71c1c;
+}
